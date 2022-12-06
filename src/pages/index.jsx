@@ -1,20 +1,22 @@
-import React from "react";
-import Main from "../components/main/index";
-import About from "../components/main/about";
-import Skills from "../components/main/skills";
-import Projects from "../components/projects/index";
-import Contact from "../components/main/contact";
-import { Element } from "react-scroll";
-
+import React, { useState } from "react";
+import useGetProducts from "../@core/hooks/useGetProducts";
+import ProductList from "../components/shop/Lists";
+import ProductFilters from "../components/filters/fiters";
 const Home = () => {
+  const [selectedFilter, setSelectedFilter] = useState("all");
+  const { data, isLoading, isError } = useGetProducts({ selectedFilter });
+  console.log({ data, isLoading, isError });
+  const changeFilterHandler = (filter) => {
+    console.log(filter);
+    setSelectedFilter(filter);
+  };
   return (
-    <Element name="home">
-      <Main />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-    </Element>
+    <>
+      <ProductFilters onChangeFilter={changeFilterHandler} />
+      {data.length > 0 && (
+        <ProductList list={data} isLoading={isLoading} isError={isError} />
+      )}
+    </>
   );
 };
 

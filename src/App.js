@@ -1,17 +1,23 @@
-import Layout from "./components/layout/layout";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/index";
-import NotFound from "./pages/NotFound";
+import Routes from "./Routes";
+import ErrorBoundary from "./@core/Error/ErrorBoundary";
+import { ToastContainer } from "react-toastify";
+import store from "./@core/redux";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} exact></Route>
-
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-    </Layout>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <ToastContainer
+          position="top-right"
+          theme="colored"
+          autoClose={4000}
+          rtl={true}
+          limit={1}
+        />
+        <Routes />
+      </Provider>
+    </ErrorBoundary>
   );
 }
 

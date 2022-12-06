@@ -7,11 +7,13 @@
 html {
   scroll-behavior: smooth;
   font-family: "Raleway", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 @layer base {
   body {
-    @apply bg-[#1b1b1b] text-[#dddedf] tracking-wide overflow-auto;
+    @apply bg-[#eeecec]  tracking-wide overflow-auto;
   }
 
   h1,
