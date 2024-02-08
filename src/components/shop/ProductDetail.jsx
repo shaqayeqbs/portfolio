@@ -34,8 +34,8 @@ const ProductDetail = ({ list, isError, isLoading }) => {
   };
 
   return (
-    <div className="mt-32 text-center p-6 pb-12 bg-white mx-auto w-[60%] rounded-xl">
-      <div className="w-56 my-6 mx-auto">
+    <div className="mt-32 text-center p-6 mb-20 md:pb-12 bg-white mx-auto w-[90%] md:w-[60%] rounded-xl">
+      <div className="md:w-56 my-6 mx-auto">
         <img src={product.image} alt="product" />
       </div>
       <div>{product.title}</div>

@@ -8,7 +8,7 @@ const ProductList = ({ isLoading, isError, list }) => {
 
   if (!list?.length) return <div>emptyList_desc</div>;
   return (
-    <div className="grid grid-rows-4 grid-flow-col gap-24 w-full  mt-36 overflow-x-auto px-20">
+    <div className="grid  md:grid-cols-4  gap-4 w-full  mt-16 overflow-x-auto px-5 md:px-20">
       {list?.map((x) => (
         <ProductItem key={x.id} data={x} />
       ))}

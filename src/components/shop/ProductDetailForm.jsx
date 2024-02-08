@@ -27,7 +27,7 @@ const ProductDetailForm = ({ onAddToCart, id }) => {
       className="flex justify-center space-between "
       onSubmit={submitHandler}
     >
-      <label className="mt-1" htmlFor="Amount">
+      <label className="text-[10px] md:text-[16px] mt-1" htmlFor="Amount">
         Amount
       </label>
       <input
@@ -42,7 +42,7 @@ const ProductDetailForm = ({ onAddToCart, id }) => {
       />
       <div className="">
         <button
-          className="bg-black text-white mx-10 px-10 py-1 rounded-lg"
+          className="bg-black text-[10px] md:text-[16px] whitespace-nowrap p-3 text-white md:mx-10 md:px-10 py-1 rounded-lg"
           type="submit"
         >
           Add To Cart

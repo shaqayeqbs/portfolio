@@ -5,9 +5,9 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const MyModal = ({ children, onClose }) => {
   return (
-    <div className={classes.container}>
+    <div className="relative ">
       <div className={classes.overlays} onClick={onClose}></div>
-      <div className={classes.modal}>
+      <div className={`${classes.modal} w-[90%] md:w-[50%]`}>
         <button onClick={onClose} className={classes.closeBtn} dir="rtl">
           {" "}
           <AiOutlineCloseCircle />

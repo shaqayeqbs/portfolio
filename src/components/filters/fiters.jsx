@@ -1,3 +1,5 @@
+import React from "react";
+
 const ProductFilters = ({ onChangeFilter }) => {
   const tabsList = [
     {
@@ -10,7 +12,7 @@ const ProductFilters = ({ onChangeFilter }) => {
     },
     {
       id: "jewelery",
-      displayName: "Jewelerys",
+      displayName: "Jewelry",
     },
     {
       id: "men's clothing",
@@ -23,14 +25,15 @@ const ProductFilters = ({ onChangeFilter }) => {
   ];
 
   return (
-    <section className="text-center mt-32 bg-[black]/80 text-white w-[50%] md:w-[90%] p-2 rounded-md mx-auto">
+    <section className="text-center whitespace-nowrap mt-32 bg-[black]/80 text-white w-[90%] p-2 rounded-md mx-auto">
       {tabsList.map((tab) => (
         <button
           key={tab.id}
-          onClick={() => {
+          onClick={(e) => {
+            console.log("Button clicked", tab.id);
             onChangeFilter(tab.id);
           }}
-          className="mx-6 hover:border-b-2"
+          className="mx-1 hover:text-[#ff4800] text-[10px] md:text-[16px] md:mx-6  cursor-pointer"
         >
           {tab.displayName}
         </button>

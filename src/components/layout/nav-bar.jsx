@@ -61,19 +61,19 @@ function Navbar() {
       {/* Overlay */}
       <div
         onClick={navHandler}
-        className={
+        className={`${
           nav
             ? "md:hidden text-[#ccc] fixed left-0 top-0 w-full h-screen bg-blue/70"
-            : "h-screen"
-        }
+            : "hidden md:hidden"
+        }`}
       >
         {/* Side Drawer Menu */}
         <div
-          className={
+          className={`${
             nav
-              ? " fixed left-0 top-0 w-[60%] sm:w-[60%] md:w-[45%] h-screen bg-[#080808] p-12 ease-in duration-500"
+              ? "fixed left-0 top-0 w-[60%] sm:w-[60%] md:w-[45%] h-screen bg-[#080808] p-3 ease-in duration-500"
               : "fixed left-[-100%] h-screen top-0 p-10 ease-in duration-700"
-          }
+          }`}
         >
           <div>
             <div className="flex w-full items-center justify-between cursor-pointer">
@@ -93,16 +93,16 @@ function Navbar() {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
-              <NavLink to="/about">
-                <li onClick={() => setNav(false)} className="py-4 text-sm">
-                  About
-                </li>
+              {/* <NavLink to="/"> */}
+              <li onClick={() => setNav(false)} className="p-4 text-sm">
+                About
+              </li>
+              <li>
                 <li>
-                  <li>
-                    <CartBtn />
-                  </li>
+                  <CartBtn onShow={showCartHandler} />
                 </li>
-              </NavLink>
+              </li>
+              {/* </NavLink> */}
             </ul>
           </div>
         </div>

@@ -10,7 +10,7 @@ const CartItem = (props) => {
       <span className=" mx-4">{price}</span>
       <span className=" mr-10">x {props.amount}</span>
 
-      <span>
+      <span className="inline-block my-5">
         <button
           onClick={props.onRemove}
           className="bg-[red] mx-1 p-1 px-3 rounded-lg"

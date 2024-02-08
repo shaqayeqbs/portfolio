@@ -4,10 +4,16 @@ import { NavLink } from "react-router-dom";
 function ProductItem({ data }) {
   console.log(data.id);
   return (
-    <NavLink to={`/products/${data.id}`}>
-      <section className="bg-white p-4 px-10 rounded-2xl cursor-pointer ">
-        <img src={data.image} alt="product" className="w-52 h-52 " />
-        <div className="w-full mt-8 text-sm text-center">{data.title}</div>
+    <NavLink to={`/products/${data.id}`} className="w-full">
+      <section className="bg-white p-4 w-full rounded-2xl h-96 cursor-pointer ">
+        <img
+          src={data.image}
+          alt="product"
+          className="md:w-52 md:h-52 mx-auto "
+        />
+        <div className="w-full mt-10 font-bold  text-sm text-center">
+          {data.title}
+        </div>
       </section>
     </NavLink>
   );
